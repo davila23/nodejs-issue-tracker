@@ -1,0 +1,69 @@
+<div class="dropdown" style=" margin: 30px;position: relative;display: inline-block;">
+  Show issues assigned to :
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Select User
+    <span class="caret"></span></button>
+  <ul class="dropdown-menu ">
+    {{#each users}}
+    <li><a href="/issues/{{login}}">{{login}} </a></li>
+    {{/each}}
+    <div class="dropdown-divider"></div>
+    <li><a href="/issues/">All </a></li>
+  </ul>
+</div>
+
+<div class="col-md-12">
+  {{#each issues}}
+
+  <div class="col-md-12">
+    <ul class="list-group ">
+      <a href="{{url}}" target="_blank" class="list-group-item list-group-item-action">
+
+
+        <div class="row">
+          {{!-- Score --}}
+          <div class="col-sm-1">
+            <div class="entry">
+              {{#if score.overdue}}
+              <h3 style="color: #000000;font-weight: bold;">{{score.value}}</h3>
+              {{else}}
+              <h3 style="color: #FE2D00;font-weight: bold;">{{score.value}}</h3>
+              {{/if}}
+            </div>
+          </div>
+          {{!-- Data Issue --}}
+          <div class="col-sm-5">
+            <p style="color: #90B5F9;font-weight: bold;">{{ title }}</p>
+            <p style="color: #ABAAAA;"> <span class="badge badge-primary badge-pill">#{{number}}</span> opened
+              {{ relativeDateCreated }} days ago by {{ opener }}
+            </p>
+          </div>
+          {{!-- Labels --}}
+          <div class="col-sm-6">
+            {{#each label}}
+            <span class="badge badge-primary badge-pill"
+              style="margin-top: 35px;  font-size:15px; background-color:rgb(184, 178, 178);""  >{{ name }}</span>
+            {{/each}}
+          </div>
+
+        </div>
+      </a>
+    </ul>
+    
+  </div>
+  
+  {{else}}
+  <div class=" card mx-auto">
+              <div class="card-body">
+                <h3>Hello </h3>
+                <p class="lead">There are not Issues yet.</p>
+                <a href="https://github.com/ROTTAY/Rotunda/issues/new" class="btn btn-success btn-block">Create One!</a>
+              </div>
+          </div>
+          {{/each}}
+   <div class="col-md-12">
+				
+    	<div class="card-body d-flex justify-content-between align-items-center" ></div>
+						<a href="https://github.com/ROTTAY/Rotunda/issues/new"  class="btn btn-primary btn-sm" >Create Issue</a>
+			</div>
+	 </div>
+</div>

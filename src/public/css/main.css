@@ -1,0 +1,29 @@
+body {
+background: #FFEFBA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, rgb(238, 231, 208));  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, rgb(238, 231, 208)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.logo {
+  width: 30%;
+}
+
+.git {
+  width: 3%;
+}
+
+.list-group{
+ 
+   overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.list-group-mine .list-group-item {
+  background-color: #f1f9fb;
+  border-top: 1px solid #0091b5;
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+
+
+
